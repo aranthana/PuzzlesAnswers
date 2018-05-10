@@ -7,17 +7,19 @@ public class FindTheWinner {
 		int mariaPoints=0;
 		String winner;
 		
-		if(s.equals("Odd")){
+		if(s.equals("Odd") && andrea.length>1){
 			for(int i=1;i<andrea.length;i+=2){
 				andreaPoints=andreaPoints+(andrea[i]-maria[i]);
 				mariaPoints=mariaPoints+(maria[i]-andrea[i]);
 			}
 		}
-		if(s.equals("Even")){
+		else if(s.equals("Even")){
 			for(int i=0;i<andrea.length;i+=2){
 				andreaPoints=andreaPoints+(andrea[i]-maria[i]);
 				mariaPoints=mariaPoints+(maria[i]-andrea[i]);
 			}
+		}else{
+			winner="Tie";
 		}
 		if(andreaPoints==mariaPoints){						//Tie
 			winner ="Tie";
