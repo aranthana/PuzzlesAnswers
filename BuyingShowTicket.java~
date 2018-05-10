@@ -35,7 +35,7 @@ public class BuyingShowTicket {
 	
 		Scanner user_input = new Scanner( System.in );
 		
-		//System.out.println("Enter here :"); 
+		System.out.println("Enter here :"); 
 		int n=user_input.nextInt();                          // Number of people in the line
 	 
 		int tickets[] = new int[n];                          // Array for required tickets
