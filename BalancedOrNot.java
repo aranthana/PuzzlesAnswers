@@ -43,7 +43,7 @@ public class BalancedOrNot {
 
 	public static void main(String[] args) {
 		Scanner user_input = new Scanner( System.in );
-		System.out.println("Enter here :"); 
+		//System.out.println("Enter here :"); 
 		int n=user_input.nextInt();							// size of expressions array
 	 	String expressions[] = new String[n];				// string array
 		for(int i=0;i<n;i++){

@@ -22,7 +22,7 @@ public class PsychometricTesting {
 		
 		Scanner user_input = new Scanner( System.in );
 		
-		System.out.println("Enter here :"); 
+		//System.out.println("Enter here :"); 
 		int n=user_input.nextInt();					// size of scores array
 		int scores[] = new int[n];					// scores array
 		for(int i=0;i<n;i++){

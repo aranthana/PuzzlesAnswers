@@ -39,7 +39,7 @@ public class FindTheWinner {
 
 		Scanner user_input = new Scanner( System.in );
 		
-		System.out.println("Enter here :"); 
+		//System.out.println("Enter here :"); 
 		int n=user_input.nextInt();								// array size for player 1 
 		
 		int player1[] = new int[n];								// integer array for player 1

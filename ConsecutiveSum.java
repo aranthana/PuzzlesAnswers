@@ -29,7 +29,7 @@ public class ConsecutiveSum {
 		
 		Scanner user_input = new Scanner( System.in );
 		
-		System.out.println("Enter here :"); 
+		//System.out.println("Enter here :"); 
 		long num=user_input.nextInt();                              // get number 
 		
 		ConsecutiveSum.consecutive(num);
