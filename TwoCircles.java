@@ -55,6 +55,6 @@ private static final String intersecting = "Intersecting";
         }
         return relations;
  
-
+ }
 		
 }
