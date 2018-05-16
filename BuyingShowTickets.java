@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class BuyingShowTicket {
+public class BuyingShowTickets {
 	static long waitingTime;
 	
 	static long waitingTime(int[] tickets, int p) {
@@ -44,6 +44,6 @@ public class BuyingShowTicket {
 		}
 		int p=user_input.nextInt();                           // position of Jessi
 		
-		BuyingShowTicket.waitingTime(tickets, p);
+		BuyingShowTickets.waitingTime(tickets, p);
 	}
 }

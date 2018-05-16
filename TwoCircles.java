@@ -28,36 +28,45 @@ public class TwoCircles {
 						info[i]="Concentric";
 				}
 				else{
-					int circleTopPt_1=arr[i][1]+arr[i][2];
-					int circleBottomPt_1=arr[i][1]-arr[i][2];
-					int circleTopPt_2=arr[i][4]+arr[i][5];
-					int circleBottomPt_2=arr[i][4]-arr[i][5];
+				
+					int circleRad_1=arr[i][2];
+					int circleRad_2=arr[i][5];
+					
+					
 		
 					if(arr[i][1]>arr[i][4]){				// if center of circle_one  above the center of circle_two
-						if(circleBottomPt_1==circleTopPt_2 || circleBottomPt_1==circleBottomPt_2 || circleTopPt_1==circleTopPt_2){
-							info[i]="Touching";
+						//if(circleBottomPt_1==circleTopPt_2 || circleBottomPt_1==circleBottomPt_2 || circleTopPt_1==circleTopPt_2){
+						if((circleRad_1+circleRad_2==arr[i][1]-arr[i][4]) ||(Math.abs(circleRad_2-circleRad_1)== arr[i][1]-arr[i][4])){	
+						info[i]="Touching";
 						}
-						else if(circleBottomPt_1<circleTopPt_2 ){
-							info[i]="Intersecting";
-						}
-						else if(circleBottomPt_1>circleTopPt_2){
+						
+						else if(circleRad_1+circleRad_2<arr[i][1]-arr[i][4]){
 							info[i]="Disjoint‐Outside";
 						}
 						else{
-							info[i]="Disjoint‐Inside";
+							if(Math.abs(circleRad_1-circleRad_2)>arr[i][1]-arr[i][4] ){
+								info[i]="Disjoint‐Inside";
+								
+							}else{
+								info[i]="Intersecting";
+							}
+							
 						}
 					}else{								// if center of circle_two  above the center of circle_one
-						if(circleBottomPt_2==circleTopPt_1 || circleBottomPt_1==circleBottomPt_2 || circleTopPt_1==circleTopPt_2){
+						if((circleRad_1+circleRad_2==arr[i][4]-arr[i][1])||(Math.abs(circleRad_1-circleRad_2)== arr[i][4]-arr[i][1])){
 							info[i]="Touching";
 						}
-						else if(circleBottomPt_2<circleTopPt_1 ){
-							info[i]="Intersecting";
-						}
-						else if(circleBottomPt_2>circleTopPt_1){
+						else if(circleRad_1+circleRad_2<arr[i][4]-arr[i][1]){
 							info[i]="Disjoint‐Outside";
 						}
 						else{
-							info[i]="Disjoint‐Inside";
+							if(Math.abs(circleRad_1-circleRad_2)>arr[i][4]-arr[i][1] ){
+								info[i]="Disjoint‐Inside";
+								
+							}else{
+								info[i]="Intersecting";
+							}
+							
 						}
 					}
 				}
@@ -66,36 +75,42 @@ public class TwoCircles {
 				if(arr[i][0]==arr[i][3]){					// centers of circles at a point
 					info[i]="Concentric";
 				}else{
-					int circleRightPt_1=arr[i][0]+arr[i][2];
-					int circleLeftPt_1=arr[i][0]-arr[i][2];
-					int circleRightPt_2=arr[i][3]+arr[i][5];
-					int circleLeftPt_2=arr[i][3]-arr[i][5];
+					
+					int circleRad_1=arr[i][2];
+					int circleRad_2=arr[i][5];
+					
 							
 					if(arr[i][0]>arr[i][3]){			// if center of circle_one  right to the center of circle_two
-						if(circleLeftPt_1==circleRightPt_2 || circleLeftPt_1==circleLeftPt_2 || circleRightPt_1==circleRightPt_2){
+						if((circleRad_1+circleRad_2==arr[i][0]-arr[i][3])|| (Math.abs(circleRad_2-circleRad_1)== arr[i][0]-arr[i][3])){
 							info[i]="Touching";
 						}
-						else if(circleLeftPt_1<circleRightPt_2 ){
-							info[i]="Intersecting";
-						}
-						else if(circleLeftPt_1>circleRightPt_2){
+						else if(circleRad_1+circleRad_2<arr[i][0]-arr[i][3]){
 							info[i]="Disjoint‐Outside";
 						}
 						else{
-							info[i]="Disjoint‐Inside";
+							if(Math.abs(circleRad_1-circleRad_2)>arr[i][0]-arr[i][3] ){
+								info[i]="Disjoint‐Inside";
+								
+							}else{
+								info[i]="Intersecting";
+							}
+							
 						}
 					}else{								// if center of circle_two  right to the center of circle_one
-						if(circleLeftPt_2==circleRightPt_1 || circleLeftPt_1==circleLeftPt_2 || circleRightPt_1==circleRightPt_2){
+						if((circleRad_1+circleRad_2==arr[i][3]-arr[i][0])|| (Math.abs(circleRad_1-circleRad_2)== arr[i][3]-arr[i][0])){
 							info[i]="Touching";
 						}
-						else if(circleLeftPt_2<circleRightPt_1 ){
-							info[i]="Intersecting";
-						}
-						else if(circleLeftPt_2>circleRightPt_1){
+						else if(circleRad_1+circleRad_2<arr[i][3]-arr[i][0]){
 							info[i]="Disjoint‐Outside";
 						}
 						else{
-							info[i]="Disjoint‐Inside";
+							if(Math.abs(circleRad_1-circleRad_2)>arr[i][3]-arr[i][0] ){
+								info[i]="Disjoint‐Inside";
+								
+							}else{
+								info[i]="Intersecting";
+							}
+							
 						}
 					}
 				}		
