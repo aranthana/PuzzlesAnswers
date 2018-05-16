@@ -106,33 +106,6 @@ public class TwoCircles {
 		return results;
     }
 
-	public static void main(String[] args) {
 
-		Scanner user_input = new Scanner( System.in );
-		
-		//System.out.println("Enter here :"); 
-		int n=user_input.nextInt();						// array size  of combination
-		String inf[]=new String[n];
-		
-		//int arr[][] = new int[n][6];					// 2D array of coordinates and r
-		/*for(int i=0;i<n;i++){
-			for(int j=0;j<6;j++){
-				arr[i][j]=user_input.nextInt();
-			}
-			
-			inf[i]=user_input.nextLine();
-			//System.out.println("jjj"+inf[1]);
-		}
-		*/
-		int count=0;
-		
-		while(user_input.hasNextLine()){
-			inf[count]=user_input.nextLine();
-			count++;
-		}
-		
-		
-		TwoCircles.circles(inf);
-	}
 		
 }
