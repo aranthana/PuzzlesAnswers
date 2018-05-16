@@ -2,59 +2,54 @@ import java.util.Scanner;
 
 public class TwoCircles {
 	
-	 private static final String touching = "Touching";
-   
- private static final String concentric = "Concentric";
-    
-private static final String intersecting = "Intersecting";
-  
-  private static final String dis_out = "Disjoint‐Outside";
-   
- private static final String dis_in = "Disjoint‐Inside";
+	
 
    
 
  static String[] circles(String[] info) {
 
-    
-    /*
-        System.out.println("circle information:");
-        for (String s:info) {
-            System.out.println(s);
-        }
-        System.out.println("-------------------");
-        */
-    
+     int l = info.length;
 
-    int l = info.length;
+      String[] resultsArray = new String[l];
+   
+ 	for (int i=0; i<l; i++) { 
+		String[] lineElements = info[i].split(" "); 
+			int[] array = Arrays.asList(lineElements).stream().mapToInt(Integer::parseInt).toArray(); 
 
-       
- String[] relations = new String[l];
-   
-     for (int n=0;n<l;n++) {
-         
-   String[] infoStr = info[n].split(" ");
-   
-         int[] infoInt = new int[infoStr.length];
-    
-        for (int i=0;i<infoStr.length;i++) infoInt[i]=Integer.valueOf(infoStr[i]);
-
-   
-         if (infoInt[0]==infoInt[3]&&infoInt[1]==infoInt[4])
-   
-             relations[n]=concentric;
-            else {
-                int distance = Math.abs(infoInt[0]-infoInt[3]+infoInt[1]-infoInt[4]);
-                int radiusSum = infoInt[2]+infoInt[5];
-                int radiusDiff = Math.abs(infoInt[2]-infoInt[5]);
-                if (radiusDiff==distance||radiusSum==distance) relations[n]=touching;
-                else if (radiusDiff<distance&&radiusSum>distance) relations[n]=intersecting;
-                else if (radiusDiff>distance) relations[n]=dis_in;
-                else relations[n]=dis_out;
-            }
-        }
-        return relations;
+		int x1 = array[0]; 
+		int y1 = array[1]; 
+		int r1 = array[2]; 
+		int x2 = array[3]; 
+		int y2 = array[4]; 
+ 		int r2 = array[5];	 
+ 		String res = null; 
  
- }
+ 
+			if ((x1 == x2) && (y1 == y2)) { 	
+				res = "Concentric"; 
+ 			} else { 
+ 				double distance = Math.pow((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2), 0.5); 
+ 
+ 				if (distance == (r1 + r2) || distance == Math.abs(r1 - r2)) { 
+ 					res = "Touching"; 
+ 				} else if ((r2 >= r1 && distance <= (r2 - r1)) || (r1 >= r2 && distance <= (r1 - r2))) { 
+ 					res = "Disjoint-Inside"; 
+ 				} else if (distance > (r1 + r2)) { 
+ 					res = "Disjoint-Outside"; 
+ 				} else { 
+ 					res = "Intersecting"; 
+ 				} 
+ 			} 
+ 			 
+ 			resultsArray[i] = res; 
+ 		} 
+ 		 
+ 		return resultsArray; 
+
+  	} 
+
+   
+ 
+ 
 		
 }
