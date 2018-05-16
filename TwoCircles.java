@@ -102,9 +102,7 @@ public class TwoCircles {
 				}		
 			}
 		}
-		for(int i=0;i<results.length;i++){
-			System.out.println(results[i]);
-		}
+		
 		return results;
     }
 
