@@ -2,9 +2,9 @@ import java.util.Scanner;
 
 public class TwoCircles {
 	
-	static String[] circles(String[] info) {
+	public static String[] circles(String[] info) {
 		String [] results=new String [info.length];				 	// info array
-		for(int i=1;i<info.length;i++){	
+		for(int i=0;i<info.length;i++){	
 			//System.out.println(info[1]+info.length);
 			 String[] infoStr = info[i].split(" ");
 	            int[] infoInt = new int[infoStr.length];
@@ -102,7 +102,7 @@ public class TwoCircles {
 				}		
 			}
 		}
-		for(int i=1;i<results.length;i++){
+		for(int i=0;i<results.length;i++){
 			System.out.println(results[i]);
 		}
 		return results;
@@ -114,16 +114,25 @@ public class TwoCircles {
 		
 		//System.out.println("Enter here :"); 
 		int n=user_input.nextInt();						// array size  of combination
-		String inf[]=new String[n+1];
+		String inf[]=new String[n];
 		
 		//int arr[][] = new int[n][6];					// 2D array of coordinates and r
-		for(int i=0;i<n+1;i++){
-			/*for(int j=0;j<6;j++){
+		/*for(int i=0;i<n;i++){
+			for(int j=0;j<6;j++){
 				arr[i][j]=user_input.nextInt();
-			}*/
+			}
+			
 			inf[i]=user_input.nextLine();
 			//System.out.println("jjj"+inf[1]);
 		}
+		*/
+		int count=0;
+		
+		while(user_input.hasNextLine()){
+			inf[count]=user_input.nextLine();
+			count++;
+		}
+		
 		
 		TwoCircles.circles(inf);
 	}
